@@ -12,6 +12,9 @@ class Word2Vec():
                         workers=workers)
         
     def train(self, data, epochs = 10):
+        if not self.model:
+            raise Exception("Model not created. Call create_model() before train().")
+        
         self.model.build_vocab(data)
         self.model.train(data, total_examples=self.model.corpus_count, epochs=epochs)
     
