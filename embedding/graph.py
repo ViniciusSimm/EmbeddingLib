@@ -19,7 +19,7 @@ class Graph():
 
     def get_nodes(self):
         if self.graph is not None:
-            self.nodes = list(self.graph.nodes())
+            self.nodes = list(self.graph.nodes)
         else:
             return []
     

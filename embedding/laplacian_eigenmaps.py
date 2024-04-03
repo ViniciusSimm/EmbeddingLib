@@ -10,7 +10,7 @@ class LaplacianEigenmaps:
 
     def create_model(self, vector_size=100):
         # Construct the normalized Laplacian matrix
-        self.model = csgraph.laplacian(self.graph, normed=True)
+        self.model = csgraph.laplacian(self.graph.adjacency_matrix, normed=True)
         self.vector_size = vector_size + 1  # plus one to exclude the zero eigenvalue eigenvector
 
     def train(self):
